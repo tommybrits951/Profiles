@@ -38,13 +38,41 @@ async function createPost(req, res) {
 
 async function getPosts(req, res) {
     try {
+        const { userID } = req.params;
+        let query = {};
 
+        // If user ID is provided, get posts for that user
+        // Otherwise, get posts from the user and their friends
+        if (user) {
+            const currentUser = await User.findById(userID);
+            if (!currentUser) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            // Get IDs of all friends
+            const friendIds = currentUser.friends.map(f => f.friend);
+            
+            // Get posts from user and their friends
+            query = {
+                author: { $in: [user._id, ...friendIds] }
+            };
+        }
+
+        const posts = await Post.find(query)
+            .sort({ createdAt: -1 }) // Sort by newest first
+            .populate('author', 'first_name last_name email') // Get author details
+            .populate('comments.author', 'first_name last_name email') // Get comment author details
+            .populate('comments.comments.author', 'first_name last_name email') // Get nested comment author details
+            .limit(20); // Limit to 20 posts per request
+
+        res.json(posts);
     } catch (err) {
-        return res.status(500).json({message: err.message || "Can't get post."})
+        return res.status(500).json({message: err.message || "Can't get posts."})
     }
 }
 
 
 module.exports = {
-    createPost
+    createPost,
+    getPosts
 }

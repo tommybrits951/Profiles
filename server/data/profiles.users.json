@@ -1,108 +1,242 @@
 [{
   "_id": {
-    "$oid": "68c4ccf18712ec0a3f0e5463"
-  },
-  "first_name": "Tommy",
-  "last_name": "Brits",
-  "dob": "1986-07-14T00:00:00.000Z",
-  "postal": 92553,
-  "gender": "Male",
-  "email": "tommybrits74@gmail.com",
-  "password": "$2b$10$Rb.Evp3bAdzti16OZd47rODjXKpNFZs.BAttprHygEahlKTgNEUmK",
-  "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
-  },
-  "images": []
-},
-{
-  "_id": {
-    "$oid": "68c4cff2f36c55d4b746cbc4"
+    "$oid": "68ce50a3b60dfd02adad525f"
   },
   "first_name": "Jackie",
   "last_name": "Cramer",
-  "dob": "1987-09-22T00:00:00.000Z",
-  "postal": 97878,
+  "dob": {
+    "$date": "1987-08-09T00:00:00.000Z"
+  },
+  "postal": 78934,
   "gender": "Female",
   "email": "jackie@jackie.com",
-  "password": "$2b$10$gxb2APyC7/l55NoVKHdHQerzExBP9V3nZS7nrZQ7CbT9hx9ZlgJrG",
-  "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
+  "password": "$2b$10$iqko9bHt8sXRX/t6HT48heUO5sM/poxyl97pOQt7qRYt/9BJ./OqG",
+  "friends": [
+    {
+      "friend": {
+        "$oid": "68ce5133b60dfd02adad5269"
+      },
+      "since": {
+        "$date": "2025-10-16T12:00:00.000Z"
+      }
+    }
+  ],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T06:58:43.983Z"
   },
-  "images": []
+  "updatedAt": {
+    "$date": "2025-09-20T06:58:43.983Z"
+  },
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "68c5d0f06401158ebb073763"
-  },
-  "first_name": "Richard",
-  "last_name": "Hennington",
-  "dob": "1980-09-09T00:00:00.000Z",
-  "postal": 89676,
-  "gender": "Male",
-  "email": "rich@rich.com",
-  "password": "$2b$10$0.9jjbXsbrVLaT7K0JoDCeAyCy30DwbC/8tveHYp0JSpD8Hp33RBK",
-  "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
-  },
-  "images": []
-},
-{
-  "_id": {
-    "$oid": "68c5d1176401158ebb073766"
-  },
-  "first_name": "Kyle",
-  "last_name": "Powers",
-  "dob": "1986-07-11T00:00:00.000Z",
-  "postal": 92553,
-  "gender": "Male",
-  "email": "kyle@kyle.com",
-  "password": "$2b$10$7oND.WAVWVSvkZ8AuPB46OIIAwK4vfYbQ0VHSDV3MOgcGBDHAPl92",
-  "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
-  },
-  "images": []
-},
-{
-  "_id": {
-    "$oid": "68c5d2ec8ea70e54c2fba58a"
-  },
-  "first_name": "jenny",
-  "last_name": "jenny",
-  "dob": "1980-09-09T00:00:00.000Z",
-  "postal": 92553,
-  "gender": "Female",
-  "email": "jenny@jenny.com",
-  "password": "$2b$10$bNdUmeMkfteobfXf1latjOsz212GE79bHiFeVTKwXXab/QUVpZo3C",
-  "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
-  },
-  "images": []
-},
-{
-  "_id": {
-    "$oid": "68c5d367b6aad8dcf8afae01"
+    "$oid": "68ce50c9b60dfd02adad5262"
   },
   "first_name": "Todd",
-  "last_name": "Ken",
-  "dob": "1970-07-07T00:00:00.000Z",
-  "postal": 92553,
+  "last_name": "Hennington",
+  "dob": {
+    "$date": "1973-09-09T00:00:00.000Z"
+  },
+  "postal": 99786,
   "gender": "Male",
   "email": "todd@todd.com",
-  "password": "$2b$10$AIgbKc9gGpBesi7gv12fUuRNWXHF93eEXSIx/Qr19HJDRD0p4nCjq",
+  "password": "$2b$10$L/0814yiD/8wGOEAS7njM.O/BNon3OqBZg9Q2rnfcLIUJUJ/YaaZy",
   "friends": [],
-  "requests": {
-    "sent": [],
-    "received": []
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T06:59:21.971Z"
   },
-  "images": []
+  "updatedAt": {
+    "$date": "2025-09-20T06:59:21.971Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ce50edb60dfd02adad5265"
+  },
+  "first_name": "James",
+  "last_name": "Peach",
+  "dob": {
+    "$date": "1980-11-14T00:00:00.000Z"
+  },
+  "postal": 92553,
+  "gender": "Male",
+  "email": "james@james.com",
+  "password": "$2b$10$S4.3bsaEhMgtfCIftgoWN.XU90RBvMDzErkOehPZKwFtssEw2vBqu",
+  "friends": [],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T06:59:57.844Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T06:59:57.844Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ce5133b60dfd02adad5269"
+  },
+  "first_name": "Tommy",
+  "last_name": "Brits",
+  "dob": {
+    "$date": "1986-07-14T00:00:00.000Z"
+  },
+  "postal": 92553,
+  "gender": "Male",
+  "email": "tommybrits74@gmail.com",
+  "password": "$2b$10$i6b1p1Tci9McqqrPa3kli.Hp4ViW8jzXMvD5J0PVJECuzSqYQpZE6",
+  "friends": [
+    {
+      "friend": {
+        "$oid": "68ce50a3b60dfd02adad525f"
+      },
+      "since": {
+        "$date": "2025-10-16T12:00:00.000Z"
+      }
+    },
+    {
+      "friend": {
+        "$oid": "68ce5154b60dfd02adad526c"
+      },
+      "since": {
+        "$date": "2025-10-16T12:00:00.000Z"
+      }
+    }
+  ],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:07.569Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:07.569Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ce5154b60dfd02adad526c"
+  },
+  "first_name": "Jim",
+  "last_name": "Jimmy",
+  "dob": {
+    "$date": "1988-07-11T00:00:00.000Z"
+  },
+  "postal": 78696,
+  "gender": "Male",
+  "email": "jim@jim.com",
+  "password": "$2b$10$qS4ikYbfD8o2/SHYlWCAE.EPfngMGk2snGFHO3IC847dSll7CGiYO",
+  "friends": [
+    {
+      "friend": {
+        "$oid": "68ce5133b60dfd02adad5269"
+      },
+      "since": {
+        "$date": "2025-10-16T12:00:00.000Z"
+      }
+    }
+  ],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f14da7bb04fb77c3528473"
+  },
+  "first_name": "Greg",
+  "last_name": "Bennet",
+  "dob": {
+    "$date": "1980-07-11T00:00:00.000Z"
+  },
+  "postal": 78696,
+  "gender": "Male",
+  "email": "greg@greg.com",
+  "password": "$2b$10$qS4ikYbfD8o2/SHYlWCAE.EPfngMGk2snGFHO3IC847dSll7CGiYO",
+  "friends": [],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f14da7bb04fb77c3528474"
+  },
+  "first_name": "Jeana",
+  "last_name": "Carrot",
+  "dob": {
+    "$date": "1988-10-11T00:00:00.000Z"
+  },
+  "postal": 78696,
+  "gender": "Female",
+  "email": "jeana@jeana.com",
+  "password": "$2b$10$qS4ikYbfD8o2/SHYlWCAE.EPfngMGk2snGFHO3IC847dSll7CGiYO",
+  "friends": [],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f14da7bb04fb77c3528475"
+  },
+  "first_name": "Jessica",
+  "last_name": "Bens",
+  "dob": {
+    "$date": "1970-01-01T00:00:00.000Z"
+  },
+  "postal": 78696,
+  "gender": "Female",
+  "email": "jessica@jessica.com",
+  "password": "$2b$10$qS4ikYbfD8o2/SHYlWCAE.EPfngMGk2snGFHO3IC847dSll7CGiYO",
+  "friends": [],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f14da7bb04fb77c3528476"
+  },
+  "first_name": "Tim",
+  "last_name": "Johnson",
+  "dob": {
+    "$date": "1972-07-11T00:00:00.000Z"
+  },
+  "postal": 78696,
+  "gender": "Male",
+  "email": "tim@tim.com",
+  "password": "$2b$10$qS4ikYbfD8o2/SHYlWCAE.EPfngMGk2snGFHO3IC847dSll7CGiYO",
+  "friends": [],
+  "images": [],
+  "createdAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T07:01:40.254Z"
+  },
+  "__v": 0
 }]

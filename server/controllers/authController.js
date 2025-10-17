@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const User = require("../models/User")
 
+
 function buildToken(user, exp, secret) {
     const {_id, first_name, last_name, email, dob, gender, postal} = user;
     const payload = {
@@ -15,28 +16,36 @@ function buildToken(user, exp, secret) {
 
 
 
-async function login(req, res) {
+async function login(req, res, next) {
     try {
         const {email, password} = req.body;
-        console.log(email, password)
+        
         if (!email || !password) {
-            return res.status(400).json({message: "All fields required."})
+            throw new ApiError(400, "All fields required.");
         }
-        const duplicate = await User.findOne({email: email})
-        const checked = bcrypt.compareSync(password, duplicate.password)
-        if (!checked || !duplicate) {
-            return res.status(401).json({message: "Email or password incorrect."})
+        
+        const user = await User.findOne({email: email});
+        if (!user) {
+            throw new ApiError(401, "Email or password incorrect.");
         }
-        const accessToken = buildToken(duplicate, "1h", process.env.ACCESS)
-        const refreshToken = buildToken(duplicate, "1d", process.env.REFRESH)
+
+        const isPasswordValid = bcrypt.compareSync(password, user.password);
+        if (!isPasswordValid) {
+            throw new ApiError(401, "Email or password incorrect.");
+        }
+
+        const accessToken = buildToken(user, "1h", process.env.ACCESS);
+        const refreshToken = buildToken(user, "1d", process.env.REFRESH);
+        
         res.cookie("jwt", refreshToken, {
             httpOnly: true,
             secure: true,
             sameSite: "None"
-        })
-        res.json(accessToken)
+        });
+        
+        res.json(accessToken);
     } catch (err) {
-        return res.status(500).json({message: err.message || "Problem logging in."})
+        next(err);
     }
 }
 
@@ -60,23 +69,35 @@ async function decodeUser(req, res) {
         const auth = req.headers.authorization;
         const token = auth.split(" ")[1]
         const decoded = jwt.decode(token, process.env.ACCESS)
-        let selection = []
-        Object.keys(decoded).map(key => {
-            selection.push(key)
-        })
-        selection.push("friends")
-        selection.push("images")
-        selection.push("requests")
-        const user = await User.findById(decoded._id).select(selection)
-        console.log(user)
+        const user = await User.findById(decoded._id).select("-password").populate("friends.friend")
+
         res.json(user)
     } catch (err) {
         return res.status(500).json({message: "Couldn't decode token."})
     }
 }
 
+
+async function logout(req, res) {
+    try {
+        const cookies = req.cookies
+        const {jwt} = cookies
+        console.log(jwt)        
+        res.clearCookie("jwt", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "None"
+        })
+        res.json({message: "Logged out."})
+    } catch (err) {
+        return res.status(500).json({message: err.message || "Couldn't log out."})
+    }
+}
+
+
 module.exports = {
     login,
     refresh,
-    decodeUser
+    decodeUser,
+    logout
 }

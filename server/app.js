@@ -12,20 +12,42 @@ const path = require('path')
 
 
 connectDB()
+
+// Body parsing middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:5173", "http://localhost:9000"]
-}))
+    origin: ["http://localhost:5173", "http://localhost:9000"],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-app.use(fileUpload())
-app.use(cookieParser())
-app.use("/profile", express.static(path.join(__dirname, "images", "profiles")))
-app.use("/gallery", express.static(path.join(__dirname, "images", "gallery")))
+// Apply rate limiting to all requests
+
+
+
+app.use(fileUpload({
+    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB file size limit
+    safeFileNames: true,
+    preserveExtension: true
+}));
+
+app.use(cookieParser());
+
+// Serve static files with cache control
+
+
+app.use("/profile", express.static(path.join(__dirname, "images", "profiles")));
+app.use("/gallery", express.static(path.join(__dirname, "images", "gallery")));
 app.use("/user", require("./routes/userRoutes"))
 app.use("/image", require("./routes/imageRoutes"))
 app.use("/auth", require("./routes/authRoutes"))
 app.use("/post", require("./routes/postRoutes"))
 app.use("/friend", require("./routes/friendRoutes"))
+
+
 
 mongoose.connection.once("open", () => {
     console.log("connected to mongodb")

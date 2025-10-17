@@ -4,10 +4,10 @@ const fs = require("fs");
 const fsPromises = require("fs/promises");
 const path = require("path");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
 
 
 
+// Create temporary output image file
 async function createOutput(img) {
   if (fs.existsSync(path.join(__dirname, "output.png"))) {
     await fsPromises.appendFile(path.join(__dirname, "output.png"), img.data);
@@ -15,9 +15,8 @@ async function createOutput(img) {
     await fsPromises.writeFile(path.join(__dirname, "output.png"), img.data)
   }
 }
-async function deleteOutput() {
-  await fsPromises.unlink(path.join(__dirname, "output.png"))
-}
+
+// Extract image from packed file
 async function extractImage(left, top, width, height) {
   const output = path.join(__dirname, "output.png");
   const temp = await sharp(output)
@@ -30,7 +29,7 @@ async function extractImage(left, top, width, height) {
     .toBuffer();
   return temp;
 }
-
+// Create profile picture
 async function makeProfilePic(x, y, width, height, email) {
   const temp = await extractImage(x, y, width, height);
   if (
@@ -50,6 +49,7 @@ async function makeProfilePic(x, y, width, height, email) {
   }
 }
 
+// Register User
 async function register(req, res) {
   try {
     const { email, password, x, y, width, height } = req.body;
@@ -61,7 +61,6 @@ async function register(req, res) {
     }
     await createOutput(file.img)
     await makeProfilePic(parseInt(x), parseInt(y), parseInt(width), parseInt(height), email)
-    await deleteOutput()
     const hashed = bcrypt.hashSync(password, 10);
     const user = await User.create({ ...req.body, password: hashed, friends: [], requests: [], images: [] });
     if (user) {
@@ -74,7 +73,7 @@ async function register(req, res) {
   }
 }
 
-
+// Get all users
 async function getAll(req, res) {
   try {
     const users = await User.find()
@@ -87,25 +86,6 @@ async function getAll(req, res) {
     res.status(200).json(userList)
   } catch (err) {
     return res.status(500).json({message: err.message || "Couldn't retreive user list."})
-  }
-}
-
-async function addFriend(req, res) {
-  try {
-    const auth = req.headers.authorization;
-    const {_id} = req.body;
-    
-    const token = auth.split(" ")[1]
-    const decoded = jwt.decode(token, process.env.ACCESS)
-    const user = await User.findById(decoded._id)
-    const friend = await User.findById(_id)
-    console.log(friend, user)
-
-    user.friends.push({friend: friend._id, since: new Date()})
-    user.save()
-    res.status(201).json({message: "Friend added."})
-  } catch (err) {
-      return res.status(500).json({message: err.message || "Problem adding friend."})
   }
 }
 

@@ -1,0 +1,253 @@
+10/12/2025 16:48:40	404	Not Found - /	Error: Not Found - /
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at cookieParser (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+10/12/2025 16:22:44	500	Cannot set headers after they are sent to the client	Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:642:11)
+    at ServerResponse.header (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\express\lib\response.js:684:10)
+    at ServerResponse.json (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\express\lib\response.js:247:10)
+    at logout (C:\Users\tommy\Desktop\Projects\Profiles\server\controllers\authController.js:99:32)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:295:15
+10/12/2025 16:24:44	500	Cannot set headers after they are sent to the client	Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:642:11)
+    at ServerResponse.header (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\express\lib\response.js:684:10)
+    at ServerResponse.json (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\express\lib\response.js:247:10)
+    at logout (C:\Users\tommy\Desktop\Projects\Profiles\server\controllers\authController.js:99:32)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:295:15
+10/14/2025 13:47:11	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/14/2025 19:00:16	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/14/2025 19:23:25	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/14/2025 23:03:47	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:58:39	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:58:39	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:23:41	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:23:41	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:02:43	404	Not Found - /friend/68ce5133b60dfd02adad5269/received	Error: Not Found - /friend/68ce5133b60dfd02adad5269/received
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:02:43	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:36:43	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:38:43	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:55:43	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:21:44	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:57:44	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:21:45	404	Not Found - /friend/68ce5133b60dfd02adad5269/accepted	Error: Not Found - /friend/68ce5133b60dfd02adad5269/accepted
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:44:45	404	Not Found - /friend/accepted/68ce5133b60dfd02adad5269	Error: Not Found - /friend/accepted/68ce5133b60dfd02adad5269
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:18:46	404	Not Found - /friend/accepted/68ce5133b60dfd02adad5269	Error: Not Found - /friend/accepted/68ce5133b60dfd02adad5269
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 05:33:46	404	Not Found - /friend/accepted/68ce5133b60dfd02adad5269	Error: Not Found - /friend/accepted/68ce5133b60dfd02adad5269
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)
+10/15/2025 13:27:41	404	Not Found - /friend/accepted/68ce5133b60dfd02adad5269	Error: Not Found - /friend/accepted/68ce5133b60dfd02adad5269
+    at notFound (C:\Users\tommy\Desktop\Projects\Profiles\server\middleware\errorHandler.js:15:19)
+    at Layer.handleRequest (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:342:13)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:297:9
+    at processParams (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:582:12)
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:291:5)
+    at C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:688:15
+    at next (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:186:3)
+    at router (C:\Users\tommy\Desktop\Projects\Profiles\server\node_modules\router\index.js:60:12)

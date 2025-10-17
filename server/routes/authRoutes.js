@@ -1,8 +1,17 @@
-const router = require("express").Router()
-const controller = require("../controllers/authController")
+const router = require("express").Router();
+const controller = require("../controllers/authController");
+const { loginLimiter, validatePasswordMiddleware } = require('../middleware/security');
+
+// Apply login rate limiting and password validation to login route
+router.post("/", loginLimiter, controller.login);
+
+// Refresh token route
+router.get("/", controller.refresh);
+
+// Get user details route
+router.get("/user", controller.decodeUser);
 
 
-router.post("/", controller.login)
-router.get("/", controller.refresh)
-router.get("/user", controller.decodeUser)
-module.exports = router
+router.get('/logout', controller.logout)
+
+module.exports = router;

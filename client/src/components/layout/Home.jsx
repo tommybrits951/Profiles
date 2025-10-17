@@ -19,6 +19,7 @@ export default function Home() {
       ) : (
         <Routes>
           <Route element={<Layout />} path="/*">
+          
             <Route element={<UserList />} index />
           </Route>
         </Routes>

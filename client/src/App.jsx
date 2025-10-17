@@ -29,7 +29,10 @@ function App() {
               Authorization: `Bearer ${auth}`,
             },
           })
-          .then((res) => setUser(res.data))
+          .then((res) => {
+            console.log(res.data)
+            setUser(res.data)
+          })
           .catch((err) => console.log(err))
       : null}
           {auth ? 

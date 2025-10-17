@@ -27,6 +27,7 @@ export default function LoginForm() {
         axios.post("/auth", pkg)
         .then(res => {
             setAuth(res.data)
+            console.log(res.data)
         })
         .catch(err => setErr(err.response.data.message))
     }

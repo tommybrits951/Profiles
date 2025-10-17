@@ -10,29 +10,48 @@ export default function UserListTab({ person }) {
   const [friendBtn, setFriendBtn] = useState(null);
 
   function checkStatus() {
-    const { friends, requests } = user;
-    const { sent, received } = requests;
-    if (friends.includes(person._id)) {
-      setFriendBtn("friend");
-    } else if (sent.includes(person._id) || received.includes(person._id)) {
-      setFriendBtn("pending");
-    } else {
-      setFriendBtn("add");
-    }
+    const {friends} = user;
+    
+  }
+
+  function sendRequest() {
+    const pkg = new FormData();
+    pkg.append("_id", person._id);
+    axios
+      .post(`/friend/${user._id}`, pkg, {
+        headers: {
+          Authorization: `Bearer ${auth}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setFriendBtn("pending");
+      })
+      .catch((err) => console.log(err));
   }
 
   useEffect(() => {
     checkStatus();
   }, [person]);
+
   return (
-    <div className="user-tab">
+    <div className="user-tab p-0">
+      <div className="h-18 tab-img">
+        <img
+          src={`http://localhost:9000/profile/${person.email}.png`}
+          className="h-full rounded-xl"
+        />
+      </div>
       <div className="tab-data">
         <h4>{person.full_name}</h4>
         <p>Age: {person.age}</p>
       </div>
-      <div className="tab-btns">
+      <div className="tab-btns mr-5">
         {friendBtn === "add" ? (
-          <button className="h-7">
+          <button
+            className="h-7 hover:scale-95 cursor-pointer"
+            onClick={sendRequest}
+          >
             <img src={addFriend} className="h-full" />
           </button>
         ) : friendBtn === "pending" ? (

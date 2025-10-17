@@ -7,6 +7,7 @@ async function checkAuth(req, res, next) {
         const token = bearer.split(" ")[1]
         const checked = jwt.verify(token, process.env.ACCESS)
         const user = await User.findById(checked._id)
+        req.user = user
         if (user) {
             next()
         }
