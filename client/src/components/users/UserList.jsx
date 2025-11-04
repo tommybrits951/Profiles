@@ -1,67 +1,39 @@
-import { useState, useContext, useEffect } from "react";
-import axios from "../../api/axios";
+import { useContext, useState, useEffect } from "react";
 import ProfileContext from "../../context/ProfileContext";
-import UserListTab from "./UserListTab";
+import UserCard from './UserCard';
+import { FaSearch, FaFilter, FaSpinner } from 'react-icons/fa';
+import debounce from 'lodash/debounce';
+
 export default function UserList() {
-  const { auth, user } = useContext(ProfileContext);
-  const [users, setUsers] = useState();
-  const [friendsList, setFriendsList] = useState([]);
+  const { 
+    userList, 
+    
+  } = useContext(ProfileContext);
 
-  function getFriends() {
-    axios
-      .get(`/friend/list/${user._id}`, {
-        headers: {
-          Authorization: `Bearer ${auth}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((err) => console.log(err));
+  const [filter, setFilter] = useState('all'); // all, friends, pending
+  const [sortBy, setSortBy] = useState('name'); // name, location, recent
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  function handleSearchChange(e) {
+    const {value} = e.target;
+    return setSearchTerm(value)
   }
-
-
-  // Sort and check for friend status
-  function checkFriendStatus(user, usersList) {
-    
-    
-
-  }
-
-
-  function getUsers() {
-    axios
-      .get("/user", {
-        headers: {
-          Authorization: `Bearer ${auth}`,
-        },
-      })
-      .then((res) => {
-        const list = res.data.filter((obj) => obj.email !== user.email);
-        console.log(auth);
-        setUsers(list);
-      })
-      .catch((err) => console.log(err));
-  }
-
-  useEffect(() => {
-    user && getUsers();
-    user && getFriends();
-    
-      
-    
-  }, [user]);
   return (
-    <ul className="absolute rounded-xl top-12 w-1/2 left-1/4 border-2 h-11/12 overflow-y-scroll">
-      {users
-        ? users.map((person, idx) => {
-            return (
-              <li className="w-full border-1 p-2" key={idx}>
-                <UserListTab person={person} />
-              </li>
-            );
-          })
-        : null}
-    </ul>
+    <section className="fixed w-1/2 h-6/7 top-18 left-1/4 border-2 inset-0 bg-white shadow-lg rounded-lg overflow-hidden m-4">
+      <div className="flex">
+        <input type="search" onChange={handleSearchChange} value={searchTerm} className="w-full border-2"/>
+        <button>
+          <FaSearch />
+        </button>
+      </div>
+      {userList && userList.map((person, idx) => {
+        return (
+          <li key={idx}>
+            <UserCard person={person} />
+          </li>
+        )
+      })}
+    </section>
   );
 }

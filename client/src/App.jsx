@@ -1,59 +1,56 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import ProfileContext from "./context/ProfileContext";
 import "./App.css";
 import Home from "./components/layout/Home";
 import axios from "./api/axios";
+import useUser from "./hooks/useUser";
+import useUsersList from "./hooks/useUsersList";
+
 
 function App() {
-  const [auth, setAuth] = useState(null);
-  const [user, setUser] = useState(null);
-  const [userList, setUserList] = useState(null)
+  // Authentication and user states
+  const [auth, setAuth] = useState(undefined);
+  const [user, setUser] = useUser(auth)
+  const [loading, setLoading] = useState(true);
+  // User lists and social states
+  const [userList, setUserList] = useUsersList(auth)
+  
+  
+  
+  
+  
 
   
-  useEffect(() => {
-    axios
-      .get("/auth")
-      .then((res) => {
-        setAuth(res.data);
-      })
-      .catch((err) => console.log(err));
-      
-  }, []);
-
-
-  useEffect(() => {
-    {auth
-      ? axios
-          .get("/auth/user", {
-            headers: {
-              Authorization: `Bearer ${auth}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data)
-            setUser(res.data)
-          })
-          .catch((err) => console.log(err))
-      : null}
-          {auth ? 
-    axios.get("/user", {
+  useEffect(() => async function() {
+    await axios.get("/auth")
+    .then(res => {
+      console.log(res.data)
+      setAuth(res.data)
+    })
+  
+    await axios.get("/user", {
       headers: {
         Authorization: `Bearer ${auth}`
       }
     })
     .then(res => {
-      console.log(res.data)
       setUserList(res.data)
     })
-    .catch(err => console.log(err))
-    : null
+  }, [auth])
+
+  const contextValue = {
+    loading,
+    setLoading,
+    user,
+    setUser,
+    auth,
+    setAuth,
+    userList,
+    setUserList
   }
-
-  }, [auth]);
-
   return (
     <main>
-      <ProfileContext.Provider value={{ auth, user, setUser, setAuth }}>
+      <ProfileContext.Provider value={contextValue}>
         <Home />
       </ProfileContext.Provider>
     </main>

@@ -1,11 +1,13 @@
-const router = require("express").Router()
-const controller = require("../controllers/userController")
-const {logger} = require("../middleware/logger")
-const checkFields = require("../middleware/checkFields")
-const checkAuth = require("../middleware/checkAuth")
+const router = require("express").Router();
+const controller = require("../controllers/userController");
+const { logger } = require("../middleware/logger");
+const checkAuth = require('../middleware/checkAuth')
 
 
-router.post("/", logger, checkFields, controller.register)
+// Public routes
+router.post("/register", logger, controller.register);
 
-router.get("/", checkAuth, controller.getAll)
+router.put("/send-request/:friendId", logger, controller.sendRequest);
+
+router.get("/", logger,  controller.getAll)
 module.exports = router;

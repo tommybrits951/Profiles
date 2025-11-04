@@ -1,97 +1,148 @@
 const User = require("../models/User");
 const sharp = require("sharp");
-const fs = require("fs");
 const fsPromises = require("fs/promises");
 const path = require("path");
+const fs = require("fs");
 const bcrypt = require("bcrypt");
 
-
-
-// Create temporary output image file
-async function createOutput(img) {
-  if (fs.existsSync(path.join(__dirname, "output.png"))) {
-    await fsPromises.appendFile(path.join(__dirname, "output.png"), img.data);
+function createOutput(img) {
+  if (fs.existsSync("output.png")) {
+    fsPromises.appendFile("output.png", img.data);
   } else {
-    await fsPromises.writeFile(path.join(__dirname, "output.png"), img.data)
+    return fsPromises.writeFile("output.png", img.data);
   }
 }
 
-// Extract image from packed file
-async function extractImage(left, top, width, height) {
-  const output = path.join(__dirname, "output.png");
-  const temp = await sharp(output)
+async function extractImage(x, y, width, height) {
+  console.log(x, y, width, height);
+  const pic = await sharp("output.png")
     .extract({
-      left: parseInt(left),
-      top: parseInt(top),
+      left: parseInt(x),
+      top: parseInt(y),
       width: parseInt(width),
       height: parseInt(height),
     })
     .toBuffer();
-  return temp;
+  return pic;
 }
-// Create profile picture
-async function makeProfilePic(x, y, width, height, email) {
-  const temp = await extractImage(x, y, width, height);
-  if (
-    !fs.existsSync(
-      path.join(__dirname, "..", "images", "profiles", `${email}.png`)
-    )
-  ) {
-    await fsPromises.appendFile(
-      path.join(__dirname, "..", "images", "profiles", `${email}.png`),
-      temp
-    );
-  } else {
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "images", "profile", `${email}.png`),
-      temp
-    );
-  }
-}
-
-// Register User
 async function register(req, res) {
   try {
-    const { email, password, x, y, width, height } = req.body;
-    const file = req.files
-    console.log(file.img)
-    const duplicate = await User.findOne({ email }).lean();
-    if (duplicate) {
-      return res.status(400).json({ message: "Email already in use." });
+    const {
+      firstName,
+      lastName,
+      postal,
+      dob,
+      email,
+      gender,
+      password,
+      x,
+      y,
+      width,
+      height,
+    } = req.body;
+    const { img } = req.files;
+
+    if (
+      !firstName ||
+      !lastName ||
+      !postal ||
+      !dob ||
+      !email ||
+      !password ||
+      !gender
+    ) {
+      return res.status(400).json({ message: "All fields required." });
     }
-    await createOutput(file.img)
-    await makeProfilePic(parseInt(x), parseInt(y), parseInt(width), parseInt(height), email)
     const hashed = bcrypt.hashSync(password, 10);
-    const user = await User.create({ ...req.body, password: hashed, friends: [], requests: [], images: [] });
-    if (user) {
-      return res.status(200).json({ message: "User profile created." });
+    const obj = {
+      firstName,
+      middleName: req.body.middleName || undefined,
+      lastName,
+      dob,
+      gender,
+      bio: req.body.bio || "",
+      interests: [],
+      occupation: "",
+      phone: req.body.phone || undefined,
+      email,
+      password: hashed,
+      city: req.body.city || "",
+      postal,
+      state: req.body.state || "",
+      country: "USA",
+      social: {},
+      friends: [],
+      privacy: {},
+      images: [],
+    };
+
+    const user = new User(obj);
+
+    await createOutput(img);
+    const pic = await extractImage(x, y, width, height);
+    if (
+      fs.existsSync(
+        path.join(__dirname, "..", "images", "profiles", `${email}.png`)
+      )
+    ) {
+      await fsPromises.unlink(
+        path.join(__dirname, "..", "images", "profiles", `${email}.png`)
+      );
+      await fsPromises.writeFile(
+        path.join(__dirname, "..", "images", "profiles", `${email}.png`),
+        pic
+      );
+    } else {
+      await fsPromises.writeFile(
+        path.join(__dirname, "..", "images", "profiles", `${email}.png`),
+        pic
+      );
     }
+    await user.save();
+    res.status(201).json({ message: "User profile created." });
   } catch (err) {
-    res
+    return res
       .status(500)
-      .json({ message: err.message || "Problem creating profile." });
+      .json({ message: err.message || "Problem registering user." });
   }
 }
 
-// Get all users
+async function sendRequest(req, res) {
+  try {
+    const { friendId } = req.params;
+    const {userId} = req.body;
+
+    const user = await User.findById(userId);
+    const friend = await User.findById(friendId);
+
+    if (!user || !friend) {
+      return res
+        .status(404)
+        .json({ message: `Couldn't find user with given ID.` });
+    }
+    await user.sendFriendRequest(friendId);
+    res
+      .status(200)
+      .json({
+        message: `Friend request sent to ${friend.firstName} ${friend.lastName}.`,
+      });
+  } catch (err) {
+    res.status(500).json({});
+  }
+}
+
 async function getAll(req, res) {
   try {
-    const users = await User.find()
-    let userList = []
-    users.map(user => {
-      
-      let temp = {...user._doc, age: user.age, full_name: user.full_name, password: undefined}
-      userList.push(temp)
-    })
-    res.status(200).json(userList)
+    const users = await User.find().select("-password").populate('friends')
+    console.log(users)
+    res.json(users)
   } catch (err) {
-    return res.status(500).json({message: err.message || "Couldn't retreive user list."})
+     return res.status(500).json({message: err.message || "Problem getting users."})
   }
 }
-
-
 
 module.exports = {
   register,
+  sendRequest,
   getAll
 };
